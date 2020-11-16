@@ -27,6 +27,7 @@ const App = () => {
       <Toggle setIsMonthly={setIsMonthly} isMonthly={isMonthly} />
       <div className="allCards">
         {allData}
+
       </div>
 
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 const Card = ({
   type,
@@ -11,7 +12,18 @@ const Card = ({
 }) => (
   <div className="card">
     <p className="card__type">{type}</p>
-    <h2 className="card__price"><span>$</span>{price}</h2>
+    <SwitchTransition>
+      <CSSTransition
+        key={price}
+        classNames="my-node"
+        addEndListener={(node, done) => {
+          node.addEventListener('transitionend', done, false);
+        }}
+      >
+        <h2 className="card__price"><span>$</span>{price}</h2>
+      </CSSTransition>
+    </SwitchTransition>
+
     <ul className="card__details">
       <li> <span>{storage}</span> Storage</li>
       <li>{user} users allowed</li>

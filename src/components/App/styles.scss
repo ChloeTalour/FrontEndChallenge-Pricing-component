@@ -1,0 +1,43 @@
+  @use 'src/styles/vars';
+
+.app {
+  min-height: 100vh;
+  background-image: url('../../assets/images/bg-top.svg');
+  background-repeat: no-repeat;
+  background-position: top -2em right -12em;
+  background-color:vars.$color-very-light-grayish-blue;
+  font-family: vars.$principal-font-family;
+  padding-bottom: 2em;
+  & h1 {
+    font-size: vars.$font-size-principal*2.2;
+    text-align: center;
+    padding-top: 2em;
+    color: vars.$color-grayish-blue;
+    font-weight: 600;
+  }
+}
+
+
+@media only screen and (min-width : 1024px) {
+ .allCards {
+   display: flex;
+  //  padding: 2em 4em;
+  padding-top: 1em;
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+ }  
+}
+
+@media only screen and (min-width : 1440px) {
+  .allCards {
+    width: 60%;
+  }  
+ }
+
+ @media only screen and (min-width : 2560px) {
+  .allCards {
+    width: 50%;
+  }  
+ }
+ 

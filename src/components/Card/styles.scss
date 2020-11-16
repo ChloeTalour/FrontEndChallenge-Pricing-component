@@ -1,0 +1,110 @@
+@use 'src/styles/vars';
+
+.card {
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 2em;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.05), 0 15px 12px rgba(0,0,0,0.05);
+  &__type {
+    padding: 2em;
+    font-size: vars.$font-size-principal*1.2;
+    font-weight: 600;
+    color: vars.$color-grayish-blue;
+    text-transform: capitalize;
+  }
+  &__price {
+    padding-bottom: .5em;
+    font-size: vars.$font-size-principal*4.5;
+    font-weight: 700;
+    color: vars.$color-dark-grayish-blue;
+    & span {
+      font-size: vars.$font-size-principal*3;
+      vertical-align: middle;
+      font-weight: 600;
+    }
+  }
+
+  &__details {
+    & li {
+      padding: 1.5em;
+      border-top: 1px solid vars.$color-light-grayish-blue;
+      width: 85%;
+      margin: auto;
+      color: vars.$color-grayish-blue;
+      font-weight: 600;
+      text-transform: capitalize;
+      & span {
+        text-transform: uppercase;
+      }
+      &:last-of-type {
+        border-bottom: 1px solid vars.$color-light-grayish-blue;
+      }
+    }
+  }
+
+  &__button {
+    margin: 2em auto;
+    width: 85%;
+    padding: 1.2em;
+    font-family: vars.$principal-font-family;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(to right, vars.$color-linear-gradient);
+    background-repeat: no-repeat;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: vars.$color-very-light-grayish-blue;
+    letter-spacing: .1em;
+    cursor: pointer;
+    transition: border ease-in-out .5s, color ease-in-out .5s, background-position ease-in-out .7s;
+
+    &:hover {
+      background-position:  100em;
+      border: 1px solid vars.$color-grayish-blue;
+      color: vars.$color-grayish-blue;
+    }
+  }
+  &:nth-child(even) {
+    background: linear-gradient(to bottom, vars.$color-linear-gradient);
+    color: white;
+    & .card__price, .card__type, .card__details li {
+      color: vars.$color-very-light-grayish-blue;
+    }
+    & .card__button {
+      background: linear-gradient(vars.$color-very-light-grayish-blue, vars.$color-very-light-grayish-blue );
+      background-repeat: no-repeat;
+      color: vars.$color-button-second;
+      transition: background-position ease-in-out .5s, border .5s, color .7s;
+    }
+    & .card__button:hover {
+      background-position: 50em;
+      border: 1px solid white;
+      color: white;
+    }
+  }
+}
+
+
+@media only screen and (min-width : 768px) {
+  .card {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width : 1024px) {
+  .card:nth-child(2) {
+    transform: scale(1.1);
+    margin:0em 1em;
+  }
+}
+
+@media only screen and (min-width : 1440px) {
+  .card{
+    width: 40%;
+  }
+}

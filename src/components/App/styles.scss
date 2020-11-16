@@ -26,7 +26,14 @@
   width: 90%;
   justify-content: center;
   margin: auto;
- }  
+ }
+ 
+ .app {
+  background-image: url('../../assets/images/bg-top.svg'), url('../../assets/images/bg-bottom.svg');
+  background-repeat: no-repeat;
+  background-position: top -2em right -5em, bottom -1em left 0;
+  background-color:vars.$color-very-light-grayish-blue;
+ }
 }
 
 @media only screen and (min-width : 1440px) {
